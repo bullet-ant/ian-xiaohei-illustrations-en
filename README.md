@@ -113,8 +113,8 @@ These images are style calibration samples, not composition templates. When usin
 Clone the repo:
 
 ```bash
-git clone https://github.com/helloianneo/ian-xiaohei-illustrations.git
-cd ian-xiaohei-illustrations
+git clone https://github.com/bullet-ant/ian-xiaohei-illustrations-en.git
+cd ian-xiaohei-illustrations-en
 ```
 
 Copy the skill into the Codex skills directory:

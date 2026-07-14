@@ -1,106 +1,106 @@
 ---
 name: ian-xiaohei-illustrations
-description: 生成 Ian 风格的中文正文配图。用于用户要求为中文文章、帖子、博客、Notion 文档、工作流文档、方法论、流程、结构、状态、隐喻或观点生成“怪诞”“小黑”“手绘”“正文配图”“文章插图”“配图建议”“shot list”“去标题/改图”等任务；默认使用小黑 IP、纯白手绘、少量红橙蓝批注、简洁清爽但天马行空的视觉风格。
+description: Generate Ian-style illustrations for English article body text. Used when users request generation of "whimsical," "Xiaohei," "hand-drawn," "body illustrations," "article illustrations," "illustration suggestions," "shot list," "detitling/image editing," and similar tasks for English articles, posts, blogs, Notion documents, workflow documentation, methodologies, processes, structures, states, metaphors, or viewpoints. Defaults to the Xiaohei IP, pure white hand-drawn style, sparse red-orange-blue annotations, and a clean yet wildly imaginative visual style.
 ---
 
-# Ian 小黑怪诞正文配图
+# Ian Xiaohei Whimsical Body Illustrations
 
-## 核心定位
+## Core Positioning
 
-为中文文章设计和生成 16:9 横版正文配图。目标不是做商业插画、PPT 信息图或可爱卡通，而是把文章里的关键判断、流程、结构、状态或隐喻，变成一张清爽、怪诞、有创意、可读但不说明书的手绘解释图。
+Design and generate 16:9 landscape body illustrations for English articles. The goal is not commercial illustration, PowerPoint infographics, or cute cartoons, but rather to turn the key judgments, processes, structures, states, or metaphors in the article into a clean, whimsical, creative, readable but not instruction-manual-like hand-drawn explanatory image.
 
-默认视觉 IP 是“小黑”：黑色实心、白点眼、细腿、空表情，认真做一件荒诞但成立的事。小黑必须参与画面的核心动作，不能只是站在旁边当装饰。
+The default visual IP is "Xiaohei": solid black, white-dot eyes, thin legs, blank expression, earnestly doing something absurd yet coherent. Xiaohei must participate in the core action of the scene—not just stand off to the side as decoration.
 
-## 先读这些参考
+## Read These References First
 
-按任务需要读取，不要一次塞满上下文：
+Load as the task requires; don't cram the context all at once:
 
-- `references/style-dna.md`：风格 DNA、颜色、文字、禁忌。
-- `references/xiaohei-ip.md`：小黑 IP 的形象、性格、动作库和禁忌。
-- `references/composition-patterns.md`：结构类型、原创隐喻方法和反复刻规则。
-- `references/prompt-template.md`：单张生图提示词模板。
-- `references/qa-checklist.md`：生成后检查和迭代规则。
-- `assets/examples/`：只作低频视觉校准，不进入默认生成路径。不要照抄这些案例的构图、物件或标注。
+- `references/style-dna.md`: Style DNA, colors, text, taboos.
+- `references/xiaohei-ip.md`: Xiaohei IP's appearance, personality, action library, and taboos.
+- `references/composition-patterns.md`: Structure types, original metaphor methods, and anti-cliché rules.
+- `references/prompt-template.md`: Single-image generation prompt template.
+- `references/qa-checklist.md`: Post-generation checks and iteration rules.
+- `assets/examples/`: For low-frequency visual calibration only; not part of the default generation path. Do not copy the composition, objects, or annotations of these examples.
 
-## 工作流
+## Workflow
 
-### 1. 消化正文
+### 1. Digest the Body Text
 
-先读用户给的正文、链接、Notion 页面、Markdown 文件或截图内容。提炼：
+First read the body text, links, Notion pages, Markdown files, or screenshot content the user provides. Extract:
 
-- 核心观点是什么
-- 哪些段落承担认知转折
-- 哪些内容适合用图解释
-- 哪些地方只适合文字，不需要图
+- What the core viewpoint is
+- Which paragraphs carry the cognitive turning points
+- Which content is suitable for explaining with an image
+- Which parts are only suitable for text and don't need an image
 
-不要平均配图。优先选择“认知锚点”，例如：核心判断、两个断点、输入输出闭环、分流、前后对比、一鱼多吃、承接路径、常见坑、角色状态变化。
+Don't illustrate uniformly. Prioritize "cognitive anchors," such as: core judgments, two breakpoints, input-output loops, branching/splitting, before-and-after comparisons, one-input-many-outputs (repurposing), continuation paths, common pitfalls, character state changes.
 
-### 2. 先出配图策略
+### 2. Produce an Illustration Strategy First
 
-如果用户只是说“分析怎么配图 / 思考哪些地方需要配图”，先给 shot list。每张图写清楚：
+If the user only says "analyze how to illustrate / think about where illustrations are needed," provide a shot list first. For each image, clearly write:
 
-- 放在哪个段落后
-- 图的主题
-- 核心意思
-- 结构类型
-- 小黑在图里做什么
-- 建议元素
-- 建议中文标注词
+- Which paragraph it goes after
+- The image's theme
+- The core meaning
+- The structure type
+- What Xiaohei is doing in the image
+- Suggested elements
+- Suggested English annotation words
 
-默认 4-8 张。文章很短时 1-3 张；长文也不要轻易超过 9 张。够用就好，避免把正文做成画册。
+Default 4-8 images. For very short articles, 1-3; even for long articles, don't easily exceed 9. Enough is enough—avoid turning the body text into a picture book.
 
-### 3. 单张生成
+### 3. Single-Image Generation
 
-如果用户明确要求“生成 / 输出 / 做图 / 帮我生成”，不要停下来等确认；用内置 `image_gen` 每张单独生成。不要把多张图拼在一张里。
+If the user explicitly requests "generate / output / make an image / help me generate," don't stop to wait for confirmation; use the built-in `image_gen` to generate each one separately. Don't combine multiple images into one.
 
-每张图只讲一个核心结构。提示词必须包含：
+Each image conveys only one core structure. The prompt must include:
 
-- 16:9 横版中文正文配图
-- 纯白背景
-- 黑色手绘线稿
-- 少量红色/橙色/蓝色中文手写批注
-- 大量留白
-- 小黑作为核心动作主体
-- 禁止 PPT、商业插画、幼稚可爱、复杂架构、左上角类型标题
+- 16:9 landscape English body illustration
+- Pure white background
+- Black hand-drawn line art
+- Sparse red/orange/blue English handwritten annotations
+- Ample white space
+- Xiaohei as the core action subject
+- No PowerPoint, commercial illustration, childish cuteness, complex architecture, or top-left-corner type titles
 
-不要复刻过往案例。案例只提供风格密度和小黑参与方式，不能直接复用“传送带断点 / 小黑拉线 / 素材鱼 / 盖章工具箱 / 常见坑路径”等已有构图，除非用户明确要求复刻某张图。每次都要从当前文章重新发明一个奇怪但成立的隐喻。
+Do not replicate past examples. Examples only provide style density and Xiaohei's mode of participation; you cannot directly reuse existing compositions like "conveyor belt breakpoint / Xiaohei pulling a string / material fish / stamp toolbox / common pitfall path," unless the user explicitly requests replicating a specific image. Each time, reinvent a strange but coherent metaphor from the current article.
 
-### 4. 检查与迭代
+### 4. Check and Iterate
 
-生成后检查 `references/qa-checklist.md`。如果出现以下问题，优先重生成或局部编辑：
+After generation, check `references/qa-checklist.md`. If the following problems appear, prioritize regenerating or local editing:
 
-- 小黑只是装饰
-- 画面太满
-- 太像流程图/PPT
-- 中文太多或错字严重
-- 左上角出现“常见坑/流程图/系统架构图”等标题
-- 画风太可爱、幼稚、死板
-- 背景不是干净白底
+- Xiaohei is just decoration
+- The scene is too crowded
+- Too much like a flowchart/PowerPoint
+- Too much text or serious typos
+- Titles like "common pitfalls / flowchart / system architecture diagram" appear in the top-left corner
+- The style is too cute, childish, or rigid
+- The background is not a clean white base
 
-### 5. 保存交付
+### 5. Save and Deliver
 
-如果用户在 workspace 内工作，把最终图复制到：
+If the user is working within a workspace, copy the final images to:
 
 ```text
 assets/<article-slug>-illustrations/
 ```
 
-按顺序命名：
+Name them in order:
 
 ```text
 01-topic-name.png
 02-topic-name.png
 ```
 
-保留原始生成文件，不要覆盖已有资产，除非用户明确要求替换。
+Keep the original generated files; don't overwrite existing assets unless the user explicitly requests replacement.
 
-## 输出口径
+## Output Guidelines
 
-生成前的策略输出要短而准。生成后的交付要包含：
+Pre-generation strategy output should be short and precise. Post-generation delivery should include:
 
-- 生成了几张
-- 每张图的用途
-- 保存路径
-- 哪些图最稳，哪些图是可选
+- How many images were generated
+- The purpose of each image
+- The save path
+- Which images are most solid, and which are optional
 
-不要长篇解释风格理论；让图自己说话。
+Don't give lengthy explanations of style theory; let the images speak for themselves.
